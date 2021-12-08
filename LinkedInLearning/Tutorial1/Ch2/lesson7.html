@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>CheckBox Examples </title>
+    </head>
+    <body>
+
+        <div id="app">
+           
+
+            <form method="post" action="">
+
+
+                 <!-- case 1 -->
+                <div class="options">
+                    <div>
+                        <input v-model="isReversed"  type="checkbox" id="reverse1">
+                        <label for="reverse1">Include reverse cards</label>
+                    </div>
+                      {{ isReversed }}  <!-- here value will be true case checked .. false case unchecked -->
+                    </div>
+                    <hr>
+
+
+                   <!-- Case 2 -->
+                    <div class="options">
+                    <div>
+                        <input v-model="isReservedCase2"  type="checkbox" id="reverse2" true-value="on" false-value="off">
+                        <label for="reverse2">Include reverse cards</label>
+                    </div>
+                      {{ isReservedCase2 }}  
+                      
+                      <!-- if you don't need to display true or false and want to customiz value you can use 
+                        true-value="ValueYouWantCaseCheck"
+                        false-value="ValueYouWantCaseUnCheck"
+                       -->
+                    </div>
+                    <hr>
+
+                <!-- Case 3   .. Have More Than Option That You Want To Check Them -->
+                <!-- here we empty array every time check any checkbox check box value will be added in array -->
+                <div class="options">
+                    <div>
+                        <input v-model="options" type="checkbox" id="reverse" value="reverse">
+                        <label for="reverse">Include reverse cards</label>
+                    </div>
+
+                    <div>
+                        <input v-model="options" type="checkbox" id="time_limit" value="time_limit">
+                        <label for="time_limit">Use time limit</label>
+                    </div>
+
+                    <div>
+                        <input v-model="options" type="checkbox" id="reminders" value="reminders">
+                        <label for="reminders">Enable reminders</label>
+                    </div>
+                </div>
+
+                <div>
+                    selected options: <strong>{{ options }}</strong>
+                </div>
+
+                <button type="submit">Create</button>
+            </form>
+        </div>
+
+        <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
+        <script>
+            const FlashCardApp = {
+                data() {
+                    return {
+                        isReversed:false,
+                        isReservedCase2:"off",
+                        options: []
+                    };
+                }
+            };
+
+            const app = Vue.createApp(FlashCardApp).mount('#app');
+        </script>
+    </body>
+</html>
