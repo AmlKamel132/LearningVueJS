@@ -38,5 +38,12 @@ check File (Lesson4)
 
 
 ----------------------------------------------------------------------------------------------------------
+### 2.2 How To Use CheckBox
+* in lesson7.html file you'll find more than case for checkbox 
+  * Check Only One CheckBox 
+  * How To Check Only One Check Box With customiz value 
+  * Check More Than One
+
+----------------------------------------------------------------------------------------------------------
 
 
