@@ -46,4 +46,16 @@ check File (Lesson4)
 
 ----------------------------------------------------------------------------------------------------------
 
+### 2.3 How To Use Radio & Select 
+* here we added select & radio buttons to treat with them
+* also , in this lesson we learnt how to install VueJs DevTools
+  * chroome extension link  https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg 
+  * add it then if you want pin it 
+  * also , go to setting for this extension (Manage Extension ) and Enable Allow access to file URLs
+  * Restart Your Browser .
+  * if You file after that .. in console you'll find tab with name Vue (You'll Find Root if you click on it , Data Will Appear  (You can Track any change also , you can change any data property ))
+
+
+
+----------------------------------------------------------------------------------------------------------------
 
