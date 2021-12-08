@@ -9,18 +9,16 @@
         <div id="app">
             <h1>{{ deckName }}</h1>
 
-
-            
-            
-
-            <div class="card">
-                <h2 v-text="flapped ?  '' :  cards[0].front"></h2>    <!--   <h2 v-text="flapped ?  '' :  cards[0].front"></h2>  ==    <h2> {{  flapped ?  '' :  cards[0].front}}</h2>     -->
-                <div v-html="flapped ?  cards[0].back : ''  ">Description</div>
+            <div class="card" @click="flipped = !flipped">
+                <h2 v-text="flipped ?  '' :  cards[index].front"></h2>    <!--   <h2 v-text="flipped ?  '' :  cards[index].front"></h2>  ==    <h2> {{  flapped ?  '' :  cards[0].front}}</h2>     -->
+                <div v-html="flipped ?  cards[index].back : ''  ">Description</div>
             </div>
 
+            <div class="navigation">
+                <button @click="move(-1)" type="button">&#8592;</button>
+                <button @click="move(1)" type="button">&#8594;</button>
+            </div>
 
-
-            
 
             <a :href="readMoreUrl">read more</a>
 
@@ -36,10 +34,19 @@
                     return {
                         deckName: 'Vue.js Fundamentals',
                         cards, // == cards : cards .. we obtain it from data.js 
-                        flapped:false,
+                        flipped:false,
                         readMoreUrl: 'https://v3.vuejs.org/guide',
-                        userInput:'default'
+                        userInput:'default',
+                        index:0
                     };
+                },
+                methods: {
+                    move(change) {
+                       if (this.cards[this.index + change]) {
+                        this.index += change;
+                        this.flipped = false; 
+                       }
+                    }
                 }
             };
           var app =   Vue.createApp(FlashCardApp).mount('#app');
@@ -47,8 +54,8 @@
 
           /* to change any data from console ..
            First Way ..
-           use vueInstanceVariable.field , example, app.flapped you will obtain current value of flapped . 
-           also you can change value example, app.flapped = true .. 
+           use vueInstanceVariable.DataPropertyName , example, app.flipped you will obtain current value of flipped . 
+           also you can change value example, app.flipped = true .. 
             */
             
         </script>

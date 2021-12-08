@@ -24,7 +24,12 @@ any change in dom will not bind to vue (One Way Bind ), So
 we will use v-model="{{inputVal}}" (Two Way Binding) 
 check File (Lesson4)
       
+----------------------------------------------------------------------------------------------------------------
 
+### 1.5 Handling Event 
+* v-on:event == @event , example @clikc="DoSomeThing"
+
+--------------------------------------------------------------------------------------------------------------------
  
 
 
