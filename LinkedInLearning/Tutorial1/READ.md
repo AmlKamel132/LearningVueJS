@@ -71,3 +71,10 @@ check File (Lesson4)
 ---------------------------------------------------------------------------------------------------------------------------------
 
 
+### 2.5 Computed Property
+ * MayBe It look like methods but there's difference in performance cause of computed property cached ,
+   You'll Find difference in lesson10 file 
+ * lesson10 file Not Releated With Tutorial 
+
+
+ ------------------------------------------------------------------------------------------------------------------------------ 

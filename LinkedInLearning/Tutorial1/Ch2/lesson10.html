@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Computed Vs Methods </title>
+    </head>
+    <body>
+        <div id="app">
+
+            <p>{{ calcTotal() }}</p>
+            <p>{{ calcTotal() }}</p>
+            <p>{{ calcTotal() }}</p>
+            <hr>
+            <p>{{ calcTotalComputed }}</p>
+            <p>{{ calcTotalComputed }}</p>
+            <p>{{ calcTotalComputed }}</p>
+            <hr>
+
+
+            <input v-model="userName" placeholder="current user "> 
+
+
+            <!--  Computed & Method Differnce 
+                
+              
+
+              1) Computed Performance Better Than Method
+
+              1.1)  If You Check Console You'll Find That
+                     we are in  calcTotal method .... Printed 3 Times Case Method 
+                     But , We are in Computed Printed Once .
+             1.2) If You Type Any Thing in input .. methods will be called even we don't use userName Property In Our Method 
+
+              2)Methods Accept Parameter But Computed Not 
+                
+              3) The Way We Call Each Of Them 
+                 calcTotal()  => Cause It's Method
+                 calcTotalComputed => Cause it's Computed Property 
+            -->
+            
+
+        
+
+        </div>
+
+     
+        <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script> 
+
+        <script>
+
+           const FlashCardApp = {
+                data() {
+                    return {
+                        product:5,
+                        price:10,
+                        userName:''
+                      
+                    };
+                },
+                methods: {
+                    calcTotal(){
+                        console.log('we are in  calcTotal method ....');
+
+                        return this.product *  this.price;
+                    }
+                   
+                },
+                computed:{
+                    calcTotalComputed(){
+                        console.log('We are in Computed ');
+                        return this.product *  this.price;
+
+                    }
+                }
+            };
+          var app =   Vue.createApp(FlashCardApp).mount('#app');
+
+
+         
+            
+        </script>
+    </body>
+</html>
