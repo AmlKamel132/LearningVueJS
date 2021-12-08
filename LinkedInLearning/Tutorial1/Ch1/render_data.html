@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Render Data </title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ message }}</h1>
+            <p>Welcome {{ 'Mrs ' + name }}</p>
+            <p>Your Age Is {{ age + ' Years' }}</p>
+            <p>{{ isSubscribed ? "You're Subscribed"  : "You're Not Subscribed"}}</p>
+            <p>{{ message.toUpperCase() }}</p> <!---->
+        </div>
+
+        <script src="data.js"></script>
+        <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script> 
+
+        <script>
+
+           const Data = {
+                data() {
+                    return {
+                        message: "Hello !!",
+                        name: "Aml",
+                        age: 25,
+                        isSubscribed:false
+                    };
+                }
+            };
+            Vue.createApp(Data).mount('#app');
+            
+        </script>
+    </body>
+</html>
