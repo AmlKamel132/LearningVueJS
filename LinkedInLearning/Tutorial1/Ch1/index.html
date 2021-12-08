@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="app">
-            <h1>Deck Name</h1>
+            <h1>{{ deckName }}</h1>
 
             <div class="card">
                 <h2>Item</h2>
@@ -17,5 +17,18 @@
 
         <script src="data.js"></script>
         <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script> <!-- adding vueJS -->
+
+        <script>
+
+           const FlashCardApp = {
+                data() {
+                    return {
+                        deckName: 'Vue.js Fundamentals'
+                    };
+                }
+            };
+            Vue.createApp(FlashCardApp).mount('#app');
+            
+        </script>
     </body>
 </html>
