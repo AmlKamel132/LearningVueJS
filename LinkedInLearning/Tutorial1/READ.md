@@ -59,3 +59,15 @@ check File (Lesson4)
 
 ----------------------------------------------------------------------------------------------------------------
 
+### 2.4 Modifiers 
+ * Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in some special way.
+   * In Our Example We Use v-model.trim="deckName" , if you type space at the end or at the end of this input & checked value off
+     deckName it'll Appear without any space cause of trim that we used 
+   * Also , We Use  v-model.number="categoryId" , if you choose any one it will be number .
+    Before using number modifiers if you track categoryId value you'll notice that it's string 
+  *  on:submit.prevent="Submit" Here We use .prevent modifiers to call event.preventDefault() on the triggered event
+  * There's alot of modifiers we just use 3 of it untill now
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
