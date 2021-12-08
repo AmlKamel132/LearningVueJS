@@ -11,10 +11,10 @@
     <div id="app">
         <h1>Deck Settings</h1>
 
-        <form method="post" action="">
+        <form method="post"   on:submit.prevent="Submit" >
             <div>
                 <label for="name">Name: </label>
-                <input v-model="deckName" type="text" id="name" name="name" /> ({{
+                <input v-model.trim="deckName" type="text" id="name" name="name" /> ({{
                 deckName.length }} characters)
             </div>
 
@@ -66,7 +66,7 @@
             <!-- Select -->
             <div class="category">
                 <label for="category">Category:</label>
-                <select v-model="categoryId" name="category" id="category">
+                <select v-model.number="categoryId" name="category" id="category">
                     <option value="">Select</option>
                     <option value="1">Foreign Language</option>
                     <option value="2">History</option>
@@ -94,6 +94,11 @@
 
                 };
             },
+            methods:{
+                Submit(){
+                    alert('Submit .. ');
+                }
+            }
         };
 
         const app = Vue.createApp(FlashCardApp).mount("#app");
