@@ -10,8 +10,8 @@
             <h1>{{ deckName }}</h1>
 
             <div class="card">
-                <h2>Item</h2>
-                <div>Description</div>
+                <h2 v-text="flapped ?  '' :  cards[0].front"></h2>    <!--   <h2 v-text="flapped ?  '' :  cards[0].front"></h2>  ==    <h2> {{  flapped ?  '' :  cards[0].front}}</h2>     -->
+                <div v-html="flapped ?  cards[0].back : ''  ">Description</div>
             </div>
         </div>
 
@@ -23,11 +23,20 @@
            const FlashCardApp = {
                 data() {
                     return {
-                        deckName: 'Vue.js Fundamentals'
+                        deckName: 'Vue.js Fundamentals',
+                        cards, // == cards : cards .. we obtain it from data.js 
+                        flapped:false
                     };
                 }
             };
-            Vue.createApp(FlashCardApp).mount('#app');
+          var app =   Vue.createApp(FlashCardApp).mount('#app');
+
+
+          /* to change any data from console ..
+           First Way ..
+           use vueInstanceVariable.field , example, app.flapped you will obtain current value of flapped . 
+           also you can change value example, app.flapped = true .. 
+            */
             
         </script>
     </body>
