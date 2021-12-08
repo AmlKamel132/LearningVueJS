@@ -17,7 +17,12 @@ if u go to vue documentation you can find more than way to add it , but we will 
 * v-text we use it to bind inner text 
 
 --------------------------------------------------------------------------------------------------------------
-
+### 1.4 Binding property 
+* v-bind:property == :property , example :href="{{url}}" 
+* but case we use :value it bind data from vue to dom which means 
+any change in dom will not bind to vue (One Way Bind ), So 
+we will use v-model="{{inputVal}}" (Two Way Binding) 
+check File (Lesson4)
       
 
  

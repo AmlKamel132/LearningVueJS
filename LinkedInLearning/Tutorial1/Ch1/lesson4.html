@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Property Bindding</title>
+    </head>
+    <body>
+        <div id="app">
+           
+
+            <div class="user-input">
+                One Way  <input type="text" :value="oneWay"> 
+                {{ oneWay }}  <!-- when you type any thing in input , value that displayed here will not change , it'll be  Test One Way Bindding -->
+            </div>
+
+
+            <div class="user-input">
+                Two Way  <input type="text" v-model="twoWay">
+                {{ twoWay }}  <!-- when you type any thing in input , what you type will be displayed here  -->
+            </div>
+
+            
+            <a :href="readMoreUrl">read more</a>
+
+        </div>
+
+        <script src="data.js"></script>
+        <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script> 
+
+        <script>
+
+           const FlashCardApp = {
+                data() {
+                    return {
+                      
+                        readMoreUrl: 'https://v3.vuejs.org/guide',
+                        oneWay:'Test One Way Bindding',
+                        twoWay:'Test Two Way Bindding',
+
+                    };
+                }
+            };
+          var app =   Vue.createApp(FlashCardApp).mount('#app');            
+        </script>
+    </body>
+</html>

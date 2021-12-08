@@ -9,10 +9,21 @@
         <div id="app">
             <h1>{{ deckName }}</h1>
 
+
+            
+            
+
             <div class="card">
                 <h2 v-text="flapped ?  '' :  cards[0].front"></h2>    <!--   <h2 v-text="flapped ?  '' :  cards[0].front"></h2>  ==    <h2> {{  flapped ?  '' :  cards[0].front}}</h2>     -->
                 <div v-html="flapped ?  cards[0].back : ''  ">Description</div>
             </div>
+
+
+
+            
+
+            <a :href="readMoreUrl">read more</a>
+
         </div>
 
         <script src="data.js"></script>
@@ -25,7 +36,9 @@
                     return {
                         deckName: 'Vue.js Fundamentals',
                         cards, // == cards : cards .. we obtain it from data.js 
-                        flapped:false
+                        flapped:false,
+                        readMoreUrl: 'https://v3.vuejs.org/guide',
+                        userInput:'default'
                     };
                 }
             };
