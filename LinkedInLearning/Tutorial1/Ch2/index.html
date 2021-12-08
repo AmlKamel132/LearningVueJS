@@ -14,14 +14,20 @@
         <form method="post"   on:submit.prevent="Submit" >
             <div>
                 <label for="name">Name: </label>
-                <input v-model.trim="deckName" type="text" id="name" name="name" /> ({{
+                <input v-model.trim="deckName" type="text" id="name" name="name" /> 
+                
+                ({{
                 deckName.length }} characters)
+
+                
             </div>
 
             <div>
                 <label for="description">Description: </label>
                 <textarea v-model="deckDescription" id="description" name="description"></textarea>
-                ({{ 200 - deckDescription.length }} left)
+                <!-- ({{ 200 - deckDescription.length }} left) -->
+
+                {{ charsLeft }} <!-- using computed property -->
             </div>
 
             <div class="options">
@@ -98,6 +104,11 @@
                 Submit(){
                     alert('Submit .. ');
                 }
+            },
+            computed: {
+                    charsLeft() {
+                        return 200 - this.deckDescription.length;
+                    }
             }
         };
 
