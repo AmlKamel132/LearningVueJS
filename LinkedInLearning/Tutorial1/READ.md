@@ -92,3 +92,8 @@ check File (Lesson4)
 * lesson12 .. open console if change value of flipped to show what will happen 
 
 --------------------------------------------------------------------------------------------------------------------------------
+### 3.3 v-for 
+* we use it to render data  (lesson13_tutorial tutorial example)
+* lesson13 you can find more than Example 
+
+--------------------------------------------------------------------------------------------------------------------------------
