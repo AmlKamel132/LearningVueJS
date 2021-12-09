@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title> (V-if) vs (V-show)</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-text="deckName"></h1>
+
+        <div class="card">
+            <h2 v-if="flipped">(V-if )</h2>
+            <h2 v-show="flipped"> (V-Show )</h2>
+           
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
+    <script>
+        const FlashCardApp = {
+            data() {
+                return {
+                    deckName: "Vue.js Fundamentals",
+                    flipped: true,
+                };
+            },
+        };
+
+        const app = Vue.createApp(FlashCardApp).mount("#app");
+    </script>
+</body>
+
+</html>

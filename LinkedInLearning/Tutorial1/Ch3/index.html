@@ -10,8 +10,8 @@
             <h1 v-text="deckName"></h1>
 
             <div @click="flipped = !flipped" class="card">
-                <h2 v-if="!flipped" v-text="front"></h2>
-                <div v-else-if="back" v-html="back"></div>
+                <h2 v-show="!flipped" v-text="front"></h2>
+                <div v-show="flipped" v-html="back"></div>
             </div>
 
             <div class="navigation">

@@ -85,3 +85,10 @@ check File (Lesson4)
 
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+### 3.2 v-show 
+* also, we can use it to display or hide depend on specific data .
+* But , v-show it just toggle element's display .. v-if not toggle display it destroy and re-construct 
+* lesson12 .. open console if change value of flipped to show what will happen 
+
+--------------------------------------------------------------------------------------------------------------------------------
