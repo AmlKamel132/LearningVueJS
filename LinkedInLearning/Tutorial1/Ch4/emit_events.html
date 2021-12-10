@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Emit Events </title>
+    </head>
+    <body>
+        <div id="app">
+            <h1 v-text="deckName"></h1>
+            <div class="navigation">
+
+            <p> Cart Quantity {{ cart }}</p>
+
+            <!-- in real project .. we will not to make button for increment/decrement as components it's just example-->
+
+            <add-cart @add="Increment"></add-cart>
+
+            <remove-cart @remove="Reset"></remove-cart>
+
+            </div>
+
+          
+
+
+
+           
+        </div>
+
+        <script src="data.js"></script>
+        <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
+        <script>
+            const FlashCardApp = {
+                data() {
+                    return {
+                        deckName: 'Vue.js Fundamentals',
+                        cart: 0,
+                                         
+                    };
+                },
+                methods: {
+                    Increment(cart){
+                        this.cart+=cart;
+
+                    },
+                    Reset(){
+                        this.cart = 0;
+                    }
+
+                   
+                   
+                },
+                
+            };
+
+            const app = Vue.createApp(FlashCardApp);            
+
+            app.component('add-cart', {
+                template: `<button @click="$emit('add',1)" type="button">Add</button>`,
+            });
+
+            app.component('remove-cart', {
+                template: `<button @click="Remove()" type="button">Reset</button>`,
+                methods:{
+                    Remove(){
+                        this.$emit('remove');
+                        //also , here if you've params .. you can pass  this.$emit('remove',your parameters ...);
+                    }
+                }
+
+
+            });
+
+            app.mount('#app');
+        </script>
+    </body>
+</html>
