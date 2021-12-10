@@ -127,3 +127,23 @@ check File (Lesson4)
 
  ------------------------------------------------------------------------------------------------------------------------------
 
+### 4.4 Using Component Slots 
+ * slot : placeHolder for any content 
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+### 4.5 & 4.6 
+####  4.5
+* Releated With VueCLI
+* cause of there's no inforamtion just install steps .. 
+   * install node => https://nodejs.org/en/ 
+   * npm install -g @vue/cli 
+   * create project => vue create project-name
+   * go to project , open terminal & run  => npm run serve 
+* 4.6 (cause more inforamtion we 'll know in tutorial 2 i'll depend on tutorial2)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+# End
+## Tutorial1 it's simple tutorial to learn fundamentals .
+
+
