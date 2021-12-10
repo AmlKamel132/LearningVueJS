@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Flash Card App</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ deckName }}</h1>
+
+            <div class="card" @click="flipped = !flipped">
+                <h2 v-text="flipped ?  '' :  cards[index].front"></h2>    <!--   <h2 v-text="flipped ?  '' :  cards[index].front"></h2>  ==    <h2> {{  flapped ?  '' :  cards[0].front}}</h2>     -->
+                <div v-html="flipped ?  cards[index].back : ''  ">Description</div>
+            </div>
+
+            <div class="navigation">
+                <button @click="move(-1)" type="button">&#8592;</button>
+                <button @click="move(1)" type="button">&#8594;</button>
+            </div>
+
+
+            <a :href="readMoreUrl">read more</a>
+
+        </div>
+
+        <script src="data.js"></script>
+        <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script> <!-- adding vueJS -->
+
+        <script>
+
+           const FlashCardApp = {
+                data() {
+                    return {
+                        deckName: 'Vue.js Fundamentals',
+                        cards, // == cards : cards .. we obtain it from data.js 
+                        flipped:false,
+                        readMoreUrl: 'https://v3.vuejs.org/guide',
+                        userInput:'default',
+                        index:0
+                    };
+                },
+                methods: {
+                    move(change) {
+                       if (this.cards[this.index + change]) {
+                        this.index += change;
+                        this.flipped = false; 
+                       }
+                    }
+                }
+            };
+          var app =   Vue.createApp(FlashCardApp).mount('#app');
+
+
+          /* to change any data from console ..
+           First Way ..
+           use vueInstanceVariable.DataPropertyName , example, app.flipped you will obtain current value of flipped . 
+           also you can change value example, app.flipped = true .. 
+            */
+            
+        </script>
+    </body>
+</html>

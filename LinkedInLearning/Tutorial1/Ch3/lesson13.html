@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title> (V-For) </title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-text="deckName"></h1>
+
+        <!-- syntax -->
+        <!-- v-for anyName(prefer single of YourDaraPropertyName  To Be Readable ) in YourDaraPropertyName -->
+        <p>Languages </p>
+          
+        <ul>
+            <li v-for="language in languages">{{ language }}</li>
+        </ul>
+
+        <hr>
+
+        <p> Tests Array Of Objects </p>
+        <ul>
+            <li v-for="test in tests"> Test Name : {{ test.name }} - Test Degree {{  test.degree }} </li>
+        </ul>
+
+        <!-- if we want to display index of each we will v-for="(anyName,index) in YourDaraPropertyName"
+            you can use any variable name not required to be index .. but , we use it to make more readable 
+            don't foreget that index start with 0 & end with YourData.length - 1
+        -->
+
+        <hr>
+        <p>Display Index </p>
+
+
+        <p v-for="(language,index) in languages">{{ index+1 }}- {{ language  }}</p>
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
+    <script>
+        const FlashCardApp = {
+            data() {
+                return {
+                    deckName: "Vue.js Fundamentals",
+                    languages: ['c++', 'java', 'c#'],
+                    tests: [
+                        {
+                            name: 'test1',
+                            degree: 'A'
+
+                        },
+                        {
+                            name: 'test2',
+                            degree: 'B+'
+
+                        },
+                        {
+                            name: 'test3',
+                            degree: 'A-'
+
+                        }
+                    ]
+                };
+            },
+        };
+
+        const app = Vue.createApp(FlashCardApp).mount("#app");
+    </script>
+</body>
+
+</html>

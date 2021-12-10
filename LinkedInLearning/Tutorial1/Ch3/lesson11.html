@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Conditional Render (V-if)</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-text="deckName"></h1>
+
+        <div class="card">
+            <h2 v-if="score >= 85">A</h2>
+            <h2 v-else-if="score > 75 ">B</h2>
+            <h2 v-else-if="score > 50">C</h2>
+            <h2 v-else>F</h2>
+        </div>
+
+        <hr />
+
+
+        <!-- Don't Add Any Element Between if & Else Cause Vue Will Not understand Example -->
+
+
+        <div class="card">
+            <h3 v-if="score >= 85">A</h3>
+            <h3>Hello ... </h3> 
+            <h3 v-else>Any Thing </h3>  <!-- Will Appear If Condition is false or True 
+                                          .. cause vue not understand where v-if that v-else belongs to it -->
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
+    <script>
+        const FlashCardApp = {
+            data() {
+                return {
+                    deckName: "Vue.js Fundamentals",
+                    score: 76,
+                };
+            },
+        };
+
+        const app = Vue.createApp(FlashCardApp).mount("#app");
+    </script>
+</body>
+
+</html>
