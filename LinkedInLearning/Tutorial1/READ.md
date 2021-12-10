@@ -117,4 +117,13 @@ check File (Lesson4)
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+### 4.3 Events 
+* lesson18 .. Every Component can has it's own methods but it can't access any method that belongs to parent directly 
+ so , child components will emit un event 
+ * Example .. in our child Component @click="$emit('flip')"  ...   <flash-card @flip="flipped = !flipped" />
+ * it's not required the name of event that we emit equal parent's method 
+ * we can use any parameter .. check emit_events file
+ 
+
+ ------------------------------------------------------------------------------------------------------------------------------
 
