@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    />
+    <title></title>
+  </head>
+  <body>
+    <div class="container" id="app">
+
+        <p>
+         <strong>Bound:</strong><br>
+         <span>{{ name }}</span>
+        </p>
+       
+        <p>
+         <strong>Parsed:</strong><br>
+         <span v-html="name"></span>
+        </p>
+        
+        
+        <p>
+         <strong>Unchangeable:</strong><br>
+         <span v-once>{{name}}</span> <!-- will not change -->
+        </p>
+       
+        
+        <h5>Text</h5>
+        <textarea class="form-control" rows="3"
+          v-model="name"></textarea>
+       </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script
+      scr="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.j"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> 
+
+    <script>
+      var app = new Vue({  
+        el: "#app",
+        data: {
+            name:'Working With Interpolations'
+        },
+      });
+    </script>
+  </body>
+</html>

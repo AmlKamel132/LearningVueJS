@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    />
+    <title></title>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <h3>Slugetize</h3>
+
+      <input class="form-control" v-model="slugText" />
+
+   
+      <div class="font-weight-bold text-danger"><p>Using Method with non reactive data </p>{{ slugetize1 }}</div>
+      <div class="font-weight-bold text-danger"><p>Using Computed with non reactive data </p>{{ slugetize2 }}</div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script
+      scr="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.j"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          slugText: "",
+        },
+        computed: {
+          now() {
+            var date = new Date();
+            return (
+              String(date.getHours()) +
+              String(date.getMinutes()) +
+              String(date.getSeconds())
+            );
+          },
+
+          slugetize2: function () {
+            return (
+              this.slugText
+                .toLowerCase()
+                .replace(/[^\w ]+/g, "")
+                .replace(/ +/g, "-") +
+              "-" +
+              this.now
+            );
+          },
+
+          slugetize1: function () {
+            return (
+              this.slugText
+                .toLowerCase()
+                .replace(/[^\w ]+/g, "")
+                .replace(/ +/g, "-") +
+              "-" +
+              this.current()
+            );
+          },
+        },
+        methods: {
+          current() {
+            var date = new Date();
+            return (
+              String(date.getHours()) +
+              String(date.getMinutes()) +
+              String(date.getSeconds())
+            );
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
