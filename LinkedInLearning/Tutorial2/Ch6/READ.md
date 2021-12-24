@@ -65,7 +65,7 @@
         * which is the most important folder. 
         * components folder
          * the place where we will add our components
-        *   app.js 
+        *   app.vue
          *  file is where our main components are going to sit.
         * assets folder
          *  where we will put any images
